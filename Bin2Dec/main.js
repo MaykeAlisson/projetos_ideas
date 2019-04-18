@@ -11,9 +11,12 @@
 
     //convert binario
     function converteBinario(num){
-        if(num / 2 !== 1){
-            
+        var decimal = 0;
+
+        for (let index = num.length -1; index >= 0; index--) {
+            decimal += parseInt(num[index]) *Math.pow(2, num.length -1 -index);         
         }
+        return decimal;
     }
 
     //pega btn_convert
@@ -23,7 +26,9 @@
         //pega valor do input
         var valorInput = input.value;
 
+        var valorOutput = converteBinario(valorInput);
 
+        output.value = valorOutput;
 
         /*
         39 ÷ 2 = 19 resta 1 
